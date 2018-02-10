@@ -5,6 +5,9 @@
   "author": "himanoa <matsunoappy@gmail.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
