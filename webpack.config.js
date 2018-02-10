@@ -1,3 +1,4 @@
+const path = require('path')
 const ENV = process.env.NODE_ENV || 'development'
 const DEV_PORT = process.env.PORT || 4444
 
@@ -24,5 +25,9 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'public'),
+    port: DEV_PORT,
   },
 }
