@@ -1,6 +1,7 @@
 const path = require('path')
 const ENV = process.env.NODE_ENV || 'development'
 const DEV_PORT = process.env.PORT || 4444
+const webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -30,5 +31,11 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'public'),
     port: DEV_PORT,
   },
-  devtool: 'inline-source-map'
+  devtool: 'inline-source-map',
+  plugins:[
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new webpack.optimize.UglifyJsPlugin()
+  ]
 }
