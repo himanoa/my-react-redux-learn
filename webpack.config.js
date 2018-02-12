@@ -30,4 +30,5 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'public'),
     port: DEV_PORT,
   },
+  devtool: 'inline-source-map'
 }
